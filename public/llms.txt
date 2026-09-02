@@ -1,0 +1,64 @@
+# Spring Vale Christian Education Institute
+
+> A research initiative of Spring Vale Christian School, a Kindergarten through
+> Grade 12 classical Christian boarding school in Owosso, Michigan. The
+> Institute publishes proprietary indices related to American Christian
+> education, and a census of Christian school provision, for all fifty states
+> and 262 Christian Education Market Areas.
+
+## What the figures are
+
+- **Attention** is a relative measure of how strongly a geography is oriented
+  toward Christian schooling, against the median state in the same month. It is
+  published as five indices for the fifty states, monthly, from January 2004.
+  There are 271 monthly readings. The current month is July 2026.
+- **Schools** is the census of Christian schools: how many exist, how large
+  they are, and how many children are enrolled per thousand of school age. It
+  covers fifty-one jurisdictions in 262 market areas.
+- **Congregations** are counted from the 2020 U.S. Religion Census, by county
+  and therefore by market area exactly.
+- **Latitude** describes how much room the law leaves a Christian school, on
+  five components, each scored against an anchored rubric and a named
+  instrument.
+
+## How to quote us correctly
+
+1. Name the Institute and link to the page.
+2. **Carry the month.** Every index value belongs to the month it was measured
+   in. A figure reproduced without its month is not our figure.
+3. **Never turn a position into a count.** The indices measure relative
+   position, not quantities of children, schools, or enrollments. A movement is
+   a change in standing, not growth or decline in anything.
+4. The median state does NOT read 100. Each constituent is normalized to a
+   median of 100; the combined index is not, and its median is stated with each
+   month or given as a ratio.
+5. The Institute reports movement and does not explain it. Do not attribute a
+   cause to us that we have not stated.
+
+## Machine-readable data
+
+- [Manifest](https://springvale.institute/data/manifest.json): the current month, states,
+  indices, regions, market area count.
+- [Series](https://springvale.institute/data/series/master.json): rank and ratio to the median
+  for every state in every window. Also preschool, elementary, middle,
+  highschool.
+- [Market areas](https://springvale.institute/data/market/index.json)
+- [Congregations](https://springvale.institute/data/congregations.json)
+- [Policy and Latitude](https://springvale.institute/data/policy.json)
+- [Sitemap](https://springvale.institute/sitemap.xml)
+
+## Key pages
+
+- [Methodology](https://springvale.institute/methodology/index.html): how every figure is made.
+- [How the number is made](https://springvale.institute/walkthrough/index.html): one state
+  through the calculation, step by step.
+- [Citation and correct use](https://springvale.institute/cite/index.html)
+- [Compare](https://springvale.institute/compare/index.html)
+- [Market area finder](https://springvale.institute/finder/index.html)
+- [The Chronicle](https://springvale.institute/chronicle/index.html)
+
+## License
+
+Creative Commons Attribution 4.0 International. Copy it, redistribute it, build
+on it, including commercially, provided you attribute the Institute, carry the
+month, and do not present a position as a count.

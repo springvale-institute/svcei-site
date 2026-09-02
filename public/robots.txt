@@ -1,0 +1,126 @@
+# Spring Vale Christian Education Institute
+# Everything here is published under CC BY 4.0. Read it, quote it, train on it.
+# What we ask in return is in /llms.txt: name us, and cite the month with the data
+# a figure belongs to. A reading without its month is not our figure.
+
+User-agent: *
+Allow: /
+Disallow: /live/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /live/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /live/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /live/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /live/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /live/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /live/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /live/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /live/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /live/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /live/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /live/
+
+User-agent: Applebot
+Allow: /
+Disallow: /live/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /live/
+
+User-agent: CCBot
+Allow: /
+Disallow: /live/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /live/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /live/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /live/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /live/
+
+User-agent: Diffbot
+Allow: /
+Disallow: /live/
+
+User-agent: Timpibot
+Allow: /
+Disallow: /live/
+
+User-agent: YouBot
+Allow: /
+Disallow: /live/
+
+User-agent: xAI-Bot
+Allow: /
+Disallow: /live/
+
+User-agent: Grokbot
+Allow: /
+Disallow: /live/
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /live/
+
+User-agent: DeepSeekBot
+Allow: /
+Disallow: /live/
+
+User-agent: Omgilibot
+Allow: /
+Disallow: /live/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /live/
+
+User-agent: FacebookBot
+Allow: /
+Disallow: /live/
+
+User-agent: PetalBot
+Allow: /
+Disallow: /live/
+
+Sitemap: https://springvale.institute/sitemap.xml

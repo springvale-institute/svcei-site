@@ -1,0 +1,75 @@
+name: integrity
+
+# The site is generated and checked in the Institute's pipeline, and the
+# finished tree is committed here. Those checks — house style, the citation
+# register, the chart and claim gates, the label-overlap measurement, and the
+# two audits — cannot run in this repository, because the code that performs
+# them is not in it and will not be.
+#
+# What can be checked here is that the tree a reader receives is whole: that
+# every payload the pages ask for is present, that every data file parses, and
+# that no internal link points at a file that is not committed. A broken link or
+# a truncated payload is the failure mode a commit can actually introduce.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Every data file parses, and the manifest is whole
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          from pathlib import Path
+          bad = []
+          for p in Path('public/data').rglob('*.json'):
+              try:
+                  json.loads(p.read_text())
+              except Exception as e:
+                  bad.append(f'{p}: {e}')
+          m = json.loads(Path('public/data/manifest.json').read_text())
+          for k in ('states', 'regions', 'indices', 'windows', 'markets'):
+              if not m.get(k):
+                  bad.append(f'manifest is missing {k}')
+          if len(m.get('states', [])) != 50:
+              bad.append(f"manifest lists {len(m.get('states', []))} states, expected 50")
+          if len(m.get('regions', [])) != 8:
+              bad.append(f"manifest lists {len(m.get('regions', []))} Regions, expected 8")
+          for b in bad:
+              print(b)
+          sys.exit(1 if bad else 0)
+          PY
+      - name: Every internal link and payload resolves
+        run: |
+          python3 - <<'PY'
+          import json, re, sys
+          from pathlib import Path
+          root = Path('public')
+          dead = []
+          for p in root.rglob('*.html'):
+              h = p.read_text(encoding='utf-8')
+              for href in re.findall(r'href="([^"#?]+)"', h):
+                  if href.startswith(('http', 'mailto:', '//')):
+                      continue
+                  if not (p.parent / href).resolve().exists():
+                      dead.append(f'{p.relative_to(root)} -> {href}')
+              for pat, sub in ((r'data-state="([^"]+)"', 'state'),
+                               (r'data-market="([^"]+)"', 'market'),
+                               (r'data-region="([^"]+)"', 'region'),
+                               (r'data-index="([^"]+)"', 'series')):
+                  for s in re.findall(pat, h):
+                      if not (root / 'data' / sub / f'{s}.json').exists():
+                          dead.append(f'{p.relative_to(root)} asks for data/{sub}/{s}.json')
+          for d in sorted(set(dead))[:40]:
+              print(d)
+          print(f'{len(set(dead))} problems')
+          sys.exit(1 if dead else 0)
+          PY

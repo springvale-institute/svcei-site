@@ -1,4 +1,4 @@
-# springvale-institute
+# svcei-site
 
 The website of the Spring Vale Christian Education Institute, as served.
 

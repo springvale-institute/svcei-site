@@ -1,6 +1,6 @@
-# svcei-site
+# springvale-institute
 
-The website of the Spring Vale Christian Education Institute.
+The website of the Spring Vale Christian Education Institute, as served.
 
 ## What is here
 
